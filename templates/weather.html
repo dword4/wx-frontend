@@ -1,0 +1,25 @@
+{% if data.main and geo %}
+
+    <h2>{{ data.name }}, {{ geo['state abbreviation']}}</h2>
+
+    <table>
+        <tr>
+            <td>Temp</td>
+            <td>{{ data.main.temp }}</td>
+        </tr>
+        <tr>
+            <td>Feels Like</td>
+            <td>{{ data.main.feels_like }}</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{ data.main.humidity }} %</td>
+        </tr>
+    </table>
+    <a href="/">Home</a>
+    <h6>this data was fetched at {{ data.dt | datetimeformat }}</h6>
+
+{% else %}
+    You have entered an incorrect location, please go back and try again
+    <a href="/">Home</a>
+{% endif %}
