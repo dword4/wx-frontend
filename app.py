@@ -31,7 +31,7 @@ def datetimeformat(value, format='%Y-%m-%d %H:%M:%S'):
 def get_location_weather():
     q = request.args.get('q','')
     # from here we need to talk to the geocode service
-    url = f"http://127.0.0.1:5001/geolocate?q={q}"
+    url = f"http://geolocate/geolocate?q={q}"
     response = requests.get(url)
 
     resp_json = response.json()
