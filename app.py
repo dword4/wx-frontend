@@ -11,7 +11,7 @@ load_dotenv()
 APPID = os.environ["appid"]
 
 app = Flask(__name__)
-r = redis.Redis(host='localhost',port=6379, decode_responses=True)
+r = redis.Redis(host='redis',port=6379, decode_responses=True)
 
 LIMIT = 600 # how many seconds before we need to fetch new data
 @app.route("/")
