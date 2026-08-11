@@ -84,3 +84,5 @@ def get_location_weather():
         print(f"Rendering cached data to save API calls")
         return render_template('weather.html',data=cached_data, geo=resp_json['places'][0])
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="5000")
